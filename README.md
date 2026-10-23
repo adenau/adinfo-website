@@ -46,20 +46,54 @@ This project deploys as a **Worker with Static Assets**, using `wrangler.jsonc`.
 
 1. Verify the sending subdomain **email.adinfo.ca** in Resend and obtain a sending API key.
 2. Create a Cloudflare Turnstile widget allowing your production hostname(s), including `www.adinfo.ca` if used. Obtain its real site key and secret key. The Worker checks the token hostname and `contact` action. Test keys are rejected outside localhost.
-3. Authenticate Wrangler with `npx.cmd wrangler login`.
-4. Store the API key and Turnstile secret as Worker secrets, entering their values at the prompts. Store the public site key the same way for convenient runtime configuration:
+3. Authenticate Wrangler with `npx wrangler login`. The deployment commands below work on macOS/Linux; in Windows PowerShell, use `npm.cmd` and `npx.cmd` if execution policy blocks the standard commands.
+4. Store the API key and Turnstile secret as Worker secrets, entering their values at the prompts:
 
-```powershell
-npx.cmd wrangler secret put RESEND_API_KEY
-npx.cmd wrangler secret put TURNSTILE_SECRET_KEY
-npx.cmd wrangler secret put TURNSTILE_SITE_KEY
+```sh
+npx wrangler secret put RESEND_API_KEY
+npx wrangler secret put TURNSTILE_SECRET_KEY
 ```
 
-Wrangler may offer to create the named Worker if it does not exist. Secret commands can create a deployment/version; run them when ready to configure the production Worker. Sender and recipient are non-secret settings already in `wrangler.jsonc`.
+Wrangler may offer to create the named Worker if it does not exist. Secret commands can create a deployment/version; run them when ready to configure the production Worker. The public `TURNSTILE_SITE_KEY`, sender, and recipient are non-secret settings already in `wrangler.jsonc`. If replacing the widget, update its public site key there and its secret using the command above. Do not store the site key as a secret with the same binding name.
 
-5. Deploy with `npm.cmd run deploy`, then connect your custom domain to this Worker in Cloudflare. Deployment is intentionally a manual step; this repository has not been deployed by the implementation task.
+5. Deploy from the repository root using the manual instructions below, then connect your custom domain to the `adinfo-website` Worker in Cloudflare.
+
+The configuration sets `keep_vars: true` to preserve additional variables configured in the Cloudflare dashboard. Variables explicitly listed in `wrangler.jsonc` use the repository's values. Worker secrets are preserved across deployments. Commit and push `wrangler.jsonc` along with code changes so Git-based deployments use the same configuration.
 
 Local `.dev.vars` values are not uploaded by deployment. Configure the production secrets separately. Never place credentials under `src/`, `_site/`, or in public client JavaScript. `.dev.vars`, `.env`, and their environment variants are ignored by Git; `.dev.vars_example` contains only placeholders and public test credentials.
+
+### Manual deployment
+
+From the repository root, install dependencies on a fresh checkout, then build and deploy:
+
+```sh
+npm ci
+npm run deploy
+```
+
+For subsequent updates, run `npm run deploy`. This script runs `npm run build` followed by `wrangler deploy`, publishing both `_site/` and `worker/index.js` using `wrangler.jsonc`. Running only `npx wrangler deploy` is sufficient after a fresh build or for a configuration-only change, but it does not rebuild the website.
+
+Do not upload only `_site/` or leave the dashboard's starter “Hello world” Worker in place: the contact form requires the backend's `/api/contact-config` and `/api/contact` endpoints.
+
+### Automatic deployment from Git
+
+Automatic deployment requires a Cloudflare Workers Builds connection; pushing to Git alone does not establish one. In Cloudflare, open **Workers & Pages → adinfo-website → Settings → Builds** and connect the repository if needed. Configure:
+
+| Setting | Value |
+| --- | --- |
+| Root directory | Repository root |
+| Build command | `npm run build` |
+| Deploy command | `npx wrangler deploy` |
+| Production branch | The branch used for production, usually `main` |
+
+Once connected, pushes to the configured production branch build and deploy the website and Worker automatically. You do not need to run a local deployment for those pushes. Check the build status in Cloudflare to confirm success. See [Cloudflare Workers Builds](https://developers.cloudflare.com/workers/ci-cd/builds/) for connection instructions. The connection is managed in Cloudflare; this repository does not establish or verify it.
+
+### Verify a deployment
+
+Open [the contact configuration endpoint](https://www.adinfo.ca/api/contact-config). It should return HTTP 200 with JSON containing the public site key (`{"siteKey":"..."}`). Then refresh [the contact page](https://www.adinfo.ca/contact/) and confirm the spam check passes. A deliberate test submission sends a real email; confirm receipt to verify delivery.
+
+- `Hello world` means the starter Worker is still serving the API instead of this project's backend.
+- HTTP 503 means the backend's configuration check failed. Check that the five bindings exist: `TURNSTILE_SITE_KEY`, `TURNSTILE_SECRET_KEY`, `RESEND_API_KEY`, `CONTACT_FROM`, and `CONTACT_TO`, and that production uses real Turnstile keys. The public site key belongs in `wrangler.jsonc`; the two secrets belong in Cloudflare.
 
 ### Contact checks
 

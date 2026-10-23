@@ -3,6 +3,7 @@
   "name": "adinfo-website",
   "main": "worker/index.js",
   "compatibility_date": "2026-10-23",
+  "keep_vars": true,
   "assets": {
     "directory": "./_site",
     "binding": "ASSETS",
@@ -10,6 +11,7 @@
     "not_found_handling": "404-page"
   },
   "vars": {
+    "TURNSTILE_SITE_KEY": "0x4AAAAAAFjJgYw5eDkbpksq",
     "CONTACT_FROM": "ADInfo <noreply@email.adinfo.ca>",
     "CONTACT_TO": "alex@adinfo.ca"
   }
