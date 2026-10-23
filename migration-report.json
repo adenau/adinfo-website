@@ -1,0 +1,83 @@
+{
+  "source": "https://www.adinfo.ca",
+  "pages": [
+    {
+      "route": "/",
+      "slug": "home",
+      "title": "ADInfo"
+    },
+    {
+      "route": "/about/",
+      "slug": "about",
+      "title": "About ADInfo"
+    },
+    {
+      "route": "/privacy/",
+      "slug": "privacy",
+      "title": "Privacy Policy"
+    },
+    {
+      "route": "/what-halo-5-can-teach-us-about-empowerment-2/",
+      "slug": "what-halo-5-can-teach-us-about-empowerment-2",
+      "title": "What Halo 5 Can Teach Us About Empowerment"
+    },
+    {
+      "route": "/what-can-mass-effect-2-teach-us-about-motivational-speaking/",
+      "slug": "what-can-mass-effect-2-teach-us-about-motivational-speaking",
+      "title": "What can Mass Effect 2 Teach us about Motivational Speaking"
+    },
+    {
+      "route": "/what-playing-a-monk-in-guild-wars-taught-me-about-leadership/",
+      "slug": "what-playing-a-monk-in-guild-wars-taught-me-about-leadership",
+      "title": "What Playing a Monk in Guild Wars Teaches About Leadership"
+    },
+    {
+      "route": "/author/alexandre/",
+      "slug": "author--alexandre",
+      "title": "Alexandre Denault - ADInfo"
+    }
+  ],
+  "assets": {
+    "https://www.adinfo.ca/assets/built/screen.css?v=00cb15527d": "/assets/built/screen.css",
+    "https://www.adinfo.ca/assets/images/default-skin.png": "/assets/images/default-skin.png",
+    "https://www.adinfo.ca/assets/images/default-skin.svg": "/assets/images/default-skin.svg",
+    "https://www.adinfo.ca/assets/images/preloader.gif": "/assets/images/preloader.gif",
+    "https://www.adinfo.ca/public/cards.min.css?v=00cb15527d": "/public/cards.min.css",
+    "https://www.adinfo.ca/content/images/2022/09/logo-large-5.jpg": "/content/images/2022/09/logo-large-5.jpg",
+    "https://www.adinfo.ca/content/images/size/w600/2025/08/IMG_6498.jpeg": "/content/images/size/w600/2025/08/IMG_6498.jpeg",
+    "https://www.adinfo.ca/content/images/size/w600/2025/08/1739510542392.png": "/content/images/size/w600/2025/08/1739510542392.png",
+    "https://www.adinfo.ca/content/images/size/w600/2025/08/1739509791863.png": "/content/images/size/w600/2025/08/1739509791863.png",
+    "https://www.adinfo.ca/content/images/size/w300/2025/08/IMG_6498.jpeg": "/content/images/size/w300/2025/08/IMG_6498.jpeg",
+    "https://www.adinfo.ca/content/images/size/w1000/2025/08/IMG_6498.jpeg": "/content/images/size/w1000/2025/08/IMG_6498.jpeg",
+    "https://www.adinfo.ca/content/images/size/w2000/2025/08/IMG_6498.jpeg": "/content/images/size/w2000/2025/08/IMG_6498.jpeg",
+    "https://www.adinfo.ca/content/images/size/w300/2025/08/1739510542392.png": "/content/images/size/w300/2025/08/1739510542392.png",
+    "https://www.adinfo.ca/content/images/size/w1000/2025/08/1739510542392.png": "/content/images/size/w1000/2025/08/1739510542392.png",
+    "https://www.adinfo.ca/content/images/size/w2000/2025/08/1739510542392.png": "/content/images/size/w2000/2025/08/1739510542392.png",
+    "https://www.adinfo.ca/content/images/size/w300/2025/08/1739509791863.png": "/content/images/size/w300/2025/08/1739509791863.png",
+    "https://www.adinfo.ca/content/images/size/w1000/2025/08/1739509791863.png": "/content/images/size/w1000/2025/08/1739509791863.png",
+    "https://www.adinfo.ca/content/images/size/w2000/2025/08/1739509791863.png": "/content/images/size/w2000/2025/08/1739509791863.png",
+    "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDF8fHJ1bm5pbmclMjB1cCUyMHN0YWlyc3xlbnwwfHx8fDE3NTUwNDYwNzR8MA&ixlib=rb-4.1.0&q=80&w=2000": "/assets/vendor/99a5a79145f2795f.jpg",
+    "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDF8fHJ1bm5pbmclMjB1cCUyMHN0YWlyc3xlbnwwfHx8fDE3NTUwNDYwNzR8MA&ixlib=rb-4.1.0&q=80&w=300": "/assets/vendor/1052e3ba69bd1d89.jpg",
+    "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDF8fHJ1bm5pbmclMjB1cCUyMHN0YWlyc3xlbnwwfHx8fDE3NTUwNDYwNzR8MA&ixlib=rb-4.1.0&q=80&w=600": "/assets/vendor/5cca98a46f8b7d01.jpg",
+    "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDF8fHJ1bm5pbmclMjB1cCUyMHN0YWlyc3xlbnwwfHx8fDE3NTUwNDYwNzR8MA&ixlib=rb-4.1.0&q=80&w=1000": "/assets/vendor/4b9d2f526857f861.jpg",
+    "https://images.unsplash.com/photo-1633265486064-086b219458ec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDJ8fHByaXZhY3l8ZW58MHx8fHwxNjY0NDc4NjQ2&ixlib=rb-1.2.1&q=80&w=2000": "/assets/vendor/cea20ef1f4a17178.jpg",
+    "https://images.unsplash.com/photo-1633265486064-086b219458ec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDJ8fHByaXZhY3l8ZW58MHx8fHwxNjY0NDc4NjQ2&ixlib=rb-1.2.1&q=80&w=300": "/assets/vendor/c23594ae1881c5b3.jpg",
+    "https://images.unsplash.com/photo-1633265486064-086b219458ec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDJ8fHByaXZhY3l8ZW58MHx8fHwxNjY0NDc4NjQ2&ixlib=rb-1.2.1&q=80&w=600": "/assets/vendor/59d407d645ca0ed2.jpg",
+    "https://images.unsplash.com/photo-1633265486064-086b219458ec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDJ8fHByaXZhY3l8ZW58MHx8fHwxNjY0NDc4NjQ2&ixlib=rb-1.2.1&q=80&w=1000": "/assets/vendor/dcb33ac53633ff22.jpg",
+    "https://www.gravatar.com/avatar/43ea20b2a8556316d080978fc401e14c?s=250&r=x&d=mp": "/assets/vendor/e1a453b1c9259d12.jpg",
+    "https://www.adinfo.ca/content/images/2025/08/1739509921899.png": "/content/images/2025/08/1739509921899.png",
+    "https://www.adinfo.ca/content/images/2025/08/1739509988255.png": "/content/images/2025/08/1739509988255.png",
+    "https://www.adinfo.ca/content/images/2025/08/1739510034056.png": "/content/images/2025/08/1739510034056.png",
+    "https://www.adinfo.ca/content/images/size/w600/2025/08/1739509921899.png": "/content/images/size/w600/2025/08/1739509921899.png",
+    "https://www.adinfo.ca/content/images/size/w1000/2025/08/1739509921899.png": "/content/images/size/w1000/2025/08/1739509921899.png",
+    "https://www.adinfo.ca/content/images/size/w600/2025/08/1739509988255.png": "/content/images/size/w600/2025/08/1739509988255.png",
+    "https://www.adinfo.ca/content/images/size/w1000/2025/08/1739509988255.png": "/content/images/size/w1000/2025/08/1739509988255.png",
+    "https://www.adinfo.ca/content/images/size/w600/2025/08/1739510034056.png": "/content/images/size/w600/2025/08/1739510034056.png",
+    "https://www.adinfo.ca/content/images/size/w1000/2025/08/1739510034056.png": "/content/images/size/w1000/2025/08/1739510034056.png",
+    "https://www.adinfo.ca/content/images/size/w600/2022/10/jason-goodman-vbxyFxlgpjM-unsplash.jpeg": "/content/images/size/w600/2022/10/jason-goodman-vbxyFxlgpjM-unsplash.jpeg",
+    "https://www.adinfo.ca/content/images/size/w300/2022/10/jason-goodman-vbxyFxlgpjM-unsplash.jpeg": "/content/images/size/w300/2022/10/jason-goodman-vbxyFxlgpjM-unsplash.jpeg",
+    "https://www.adinfo.ca/content/images/size/w1000/2022/10/jason-goodman-vbxyFxlgpjM-unsplash.jpeg": "/content/images/size/w1000/2022/10/jason-goodman-vbxyFxlgpjM-unsplash.jpeg",
+    "https://www.adinfo.ca/content/images/size/w2000/2022/10/jason-goodman-vbxyFxlgpjM-unsplash.jpeg": "/content/images/size/w2000/2022/10/jason-goodman-vbxyFxlgpjM-unsplash.jpeg"
+  },
+  "failures": []
+}

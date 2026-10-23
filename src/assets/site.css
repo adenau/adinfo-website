@@ -1,0 +1,11 @@
+/* Keep Casper's original design, with keyboard focus and fluid video embeds. */
+/* Static navigation does not need Casper's dropdown initialization script. */
+@media (min-width: 992px) {
+  body:not(.is-dropdown-loaded) .gh-head-menu .nav > li { opacity: 1; }
+}
+:focus-visible { outline: 3px solid var(--ghost-accent-color, #522bee); outline-offset: 4px; }
+.gh-content iframe { max-width: 100%; }
+.gh-content iframe[src*="youtube"], .gh-content iframe[src*="vimeo"] { width: 100%; height: auto; aspect-ratio: 16 / 9; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
