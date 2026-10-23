@@ -1,0 +1,33 @@
+---
+layout: base.njk
+title: Contact Alexandre
+description: Get in touch with Alexandre Denault about technology, leadership, and your next challenge.
+permalink: /contact/
+---
+<section class="grid gap-12 py-14 sm:py-20 lg:grid-cols-[1fr_1.3fr]">
+  <div>
+    <p class="text-xs font-semibold uppercase tracking-widest text-brand-700">Let’s talk</p>
+    <h1 class="mt-4 text-4xl font-semibold leading-tight tracking-tight text-zinc-900 sm:text-5xl">Good conversations start here.</h1>
+    <p class="mt-6 text-lg leading-8 text-zinc-600">Have a question about technology or leadership? Want to compare notes, explore an idea, or talk through a challenge? I’d like to hear from you.</p>
+    <p class="mt-8 text-sm leading-7 text-zinc-600">Prefer LinkedIn? <a class="font-semibold text-brand-700 underline underline-offset-4" href="{{ site.linkedin }}">Connect with me there ↗</a></p>
+  </div>
+  <form id="contact-form" action="/api/contact" method="post" class="rounded-2xl border border-zinc-200 bg-stone-50 p-6 sm:p-8" aria-describedby="contact-privacy">
+    <div class="space-y-6">
+      <div><label class="form-label" for="name">Name <span class="font-normal text-zinc-500">(required)</span></label><input class="form-input" id="name" name="name" autocomplete="name" maxlength="100" required></div>
+      <div><label class="form-label" for="email">Email <span class="font-normal text-zinc-500">(required)</span></label><input class="form-input" id="email" name="email" type="email" autocomplete="email" maxlength="254" required><p class="mt-2 text-xs text-zinc-500">So I can reply to you.</p></div>
+      <div><label class="form-label" for="company">Company <span class="font-normal text-zinc-500">(optional)</span></label><input class="form-input" id="company" name="company" autocomplete="organization" maxlength="150"></div>
+      <div><label class="form-label" for="message">What’s on your mind? <span class="font-normal text-zinc-500">(required)</span></label><textarea class="form-input min-h-44 resize-y" id="message" name="message" rows="7" minlength="10" maxlength="5000" required></textarea><p class="mt-2 text-xs text-zinc-500">Between 10 and 5,000 characters.</p></div>
+      <div hidden aria-hidden="true"><label for="website">Leave this field empty</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div>
+      <p id="contact-privacy" class="text-xs leading-6 text-zinc-500">Your details are used to respond to your inquiry. Cloudflare protects this form from spam, and Resend delivers your message. <a href="/privacy/" class="underline underline-offset-4">Privacy policy</a>.</p>
+      <div>
+        <p class="mb-2 text-sm font-semibold text-zinc-800">Spam protection</p>
+        <div id="turnstile-widget" aria-label="Spam protection"></div>
+        <p class="mt-2 text-xs leading-6 text-zinc-500">A checkmark here means the spam check passed. Your message is only sent when you select “Send message” and receive a confirmation below.</p>
+      </div>
+      <p id="form-status" class="text-sm leading-6 text-zinc-700" role="status" aria-live="polite" tabindex="-1">Preparing the form…</p>
+      <noscript><p>Please enable JavaScript to use the contact form, or <a class="underline" href="{{ site.linkedin }}">reach out on LinkedIn</a>.</p></noscript>
+      <button id="send-message" class="contact-button disabled:cursor-not-allowed disabled:opacity-50" type="submit" disabled>Send message <span class="ml-3" aria-hidden="true">→</span></button>
+    </div>
+  </form>
+</section>
+<script src="/assets/contact.js" defer></script>

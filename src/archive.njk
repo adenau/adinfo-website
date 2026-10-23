@@ -1,0 +1,7 @@
+---
+layout: base.njk
+title: All articles
+description: Ideas on technology, teams, and leadership from Alexandre Denault.
+permalink: /archive/
+---
+<section class="py-16"><p class="text-xs font-semibold uppercase tracking-widest text-brand-700">The journal</p><h1 class="mt-4 text-4xl font-semibold tracking-tight text-zinc-900">All perspectives.</h1><p class="mt-5 max-w-xl text-lg leading-8 text-zinc-600">Notes from the intersection of technology, leadership, and a lifelong curiosity about how things work.</p><div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">{% for post in collections.posts %}{% include "card.njk" %}{% endfor %}</div></section>

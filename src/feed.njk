@@ -1,0 +1,10 @@
+---
+permalink: /rss/index.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel>
+<title>ADInfo</title><link>{{ site.url }}</link><description>{{ site.description | xml | safe }}</description><language>en</language>
+<atom:link href="{{ site.url }}/rss/index.xml" rel="self" type="application/rss+xml"/>
+{% for post in collections.posts %}<item><title>{{ post.data.title | xml | safe }}</title><link>{{ post.url | absolute }}</link><guid isPermaLink="true">{{ post.url | absolute }}</guid><pubDate>{{ post.date | rssDate }}</pubDate><description>{{ post.data.description | xml | safe }}</description></item>{% endfor %}
+</channel></rss>

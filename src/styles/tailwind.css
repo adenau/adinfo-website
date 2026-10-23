@@ -1,0 +1,35 @@
+@import "tailwindcss" source(none);
+@source "../_includes";
+@source "../*.njk";
+@source "../pages";
+@source "../posts";
+@plugin "@tailwindcss/typography";
+@theme {
+  --font-sans: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+  --color-brand-50: #f0f3fc;
+  --color-brand-100: #e1e7f8;
+  --color-brand-200: #c4d0f0;
+  --color-brand-600: #17158a;
+  --color-brand-700: #020065;
+}
+@layer base {
+  body { @apply bg-stone-50 text-zinc-800 antialiased; }
+  ::selection { @apply bg-brand-200 text-zinc-950; }
+  :focus-visible { outline: 3px solid var(--color-brand-700); outline-offset: 5px; }
+  a, button { -webkit-tap-highlight-color: transparent; }
+}
+@layer components {
+  .form-label { @apply mb-2 block text-sm font-semibold text-zinc-800; }
+  .form-input { @apply block w-full rounded-xl border border-zinc-300 bg-white px-4 py-3 text-base text-zinc-900; }
+  .contact-button, .article-prose a.contact-button { @apply inline-flex items-center justify-center rounded-full bg-brand-700 px-5 py-3 text-sm font-semibold text-white no-underline transition-colors hover:bg-brand-600; }
+  .article-prose { @apply prose prose-zinc prose-lg max-w-none prose-headings:font-semibold prose-headings:tracking-tight prose-a:text-brand-700 prose-a:decoration-brand-200 prose-a:underline-offset-4 hover:prose-a:decoration-brand-600 prose-img:rounded-2xl prose-blockquote:rounded-r-2xl prose-blockquote:border-brand-600 prose-blockquote:bg-brand-50 prose-blockquote:px-6 prose-blockquote:py-2 prose-blockquote:font-normal prose-blockquote:not-italic; }
+  .article-prose { overflow-wrap: anywhere; }
+  .article-prose blockquote p::before, .article-prose blockquote p::after { content: none; }
+  .article-prose figure img { width: 100%; }
+  .article-prose figcaption { @apply text-center text-sm text-zinc-500; }
+  .nav-link { @apply rounded-full px-3 py-2 text-sm font-medium text-zinc-600 transition-colors hover:bg-brand-50 hover:text-brand-700 sm:px-4; }
+  .nav-link[aria-current="page"] { @apply bg-brand-50 text-brand-700; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; }
+}

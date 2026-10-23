@@ -1,3 +1,8 @@
 node_modules/
 _site/
 .cache/
+.wrangler/
+.dev.vars
+.dev.vars.*
+.env
+.env.*

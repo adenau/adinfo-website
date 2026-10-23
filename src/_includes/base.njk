@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title | escape }}{% if title != site.name %} · {{ site.name }}{% endif %}</title>
+  <meta name="description" content="{{ (description or site.description) | escape }}">
+  <link rel="canonical" href="{{ page.url | absolute }}">
+  <meta property="og:site_name" content="ADInfo">
+  <meta property="og:title" content="{{ title | escape }}">
+  <meta property="og:description" content="{{ (description or site.description) | escape }}">
+  <meta property="og:url" content="{{ page.url | absolute }}">
+  <meta property="og:type" content="{% if tags and 'post' in tags %}article{% else %}website{% endif %}">
+  {% if image %}<meta property="og:image" content="{{ image | absolute }}"><meta name="twitter:card" content="summary_large_image">{% endif %}
+  <link rel="alternate" type="application/rss+xml" title="ADInfo" href="/rss/index.xml">
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <a class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:rounded-lg focus:bg-white focus:p-4" href="#main">Skip to content</a>
+  <div class="mx-auto min-h-screen max-w-7xl border-x border-zinc-100 bg-white">
+    <header class="border-b border-zinc-100">
+      <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-6 sm:px-10 lg:px-12">
+        <a href="/" aria-label="ADInfo home" class="block shrink-0">
+          <img src="/content/images/2022/09/logo-large-5.jpg" alt="ADInfo" class="h-auto w-24 sm:w-28" width="112" height="84" eleventy:widths="112,224,336" sizes="(min-width: 640px) 112px, 96px" loading="eager">
+        </a>
+        <nav aria-label="Main navigation" class="flex flex-wrap items-center gap-1">
+          <a class="nav-link" href="/" {% if page.url == '/' %}aria-current="page"{% endif %}>Home</a>
+          <a class="nav-link" href="/about/" {% if page.url == '/about/' %}aria-current="page"{% endif %}>About</a>
+          <a class="nav-link" href="https://www.technodabbler.com/">Technodabbler <span aria-hidden="true">↗</span></a>
+          <a class="contact-button" href="/contact/" {% if page.url == '/contact/' %}aria-current="page"{% endif %}>Get in touch</a>
+        </nav>
+      </div>
+    </header>
+    <main id="main" class="mx-auto max-w-6xl px-6 sm:px-10 lg:px-12">{{ content | safe }}</main>
+    <footer class="mt-24 border-t border-zinc-100">
+      {% if page.url != '/contact/' %}
+      <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-5 px-6 pt-10 sm:px-10 lg:px-12">
+        <div><p class="text-lg font-semibold text-zinc-900">Have something on your mind?</p><p class="mt-2 text-sm text-zinc-600">Let’s talk about technology, leadership, or your next challenge.</p></div>
+        <a class="contact-button" href="/contact/">Reach out to Alexandre <span class="ml-3" aria-hidden="true">→</span></a>
+      </div>
+      {% endif %}
+      <div class="mx-auto flex max-w-6xl flex-col justify-between gap-5 px-6 py-9 text-sm text-zinc-500 sm:flex-row sm:px-10 lg:px-12">
+        <p>© {{ buildYear }} ADInfo. Technology with a human perspective.</p>
+        <nav aria-label="Footer navigation" class="flex gap-6">
+          <a class="hover:text-brand-700" href="/privacy/">Privacy</a>
+          <a class="hover:text-brand-700" href="/rss/index.xml">RSS</a>
+          <a class="hover:text-brand-700" href="{{ site.linkedin }}">LinkedIn ↗</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

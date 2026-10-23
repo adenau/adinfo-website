@@ -5,14 +5,26 @@
   "type": "module",
   "scripts": {
     "start": "eleventy --serve",
-    "build": "eleventy",
-    "import": "node scripts/import.mjs",
-    "check": "node scripts/check.mjs"
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "check:publishing": "node scripts/check-publishing.mjs",
+    "dev:worker": "npm run build && wrangler dev --ip 127.0.0.1",
+    "check:worker": "node --test test/contact.test.mjs test/contact-client.test.mjs",
+    "deploy": "npm run build && wrangler deploy"
   },
-  "engines": { "node": ">=20.18.1" },
+  "engines": {
+    "node": ">=22"
+  },
   "devDependencies": {
     "@11ty/eleventy": "3.1.7",
-    "cheerio": "1.0.0"
+    "@11ty/eleventy-img": "^7.1.1",
+    "@tailwindcss/cli": "^4.3.3",
+    "@tailwindcss/typography": "^0.5.20",
+    "cheerio": "1.0.0",
+    "tailwindcss": "^4.3.3",
+    "wrangler": "^4.152.0"
+  },
+  "overrides": {
+    "postcss-selector-parser": "^7.1.6"
   }
 }
-

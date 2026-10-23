@@ -1,0 +1,10 @@
+# Copy this file to .dev.vars (which is ignored by Git).
+# Local values are read by npm run dev:worker, not npm start.
+RESEND_API_KEY="re_replace_with_your_resend_api_key"
+CONTACT_FROM="ADInfo <noreply@email.adinfo.ca>"
+CONTACT_TO="alex@adinfo.ca"
+
+# Official Cloudflare testing keys: LOCAL DEVELOPMENT ONLY.
+# Replace both with your real Turnstile widget keys in production.
+TURNSTILE_SITE_KEY="1x00000000000000000000AA"
+TURNSTILE_SECRET_KEY="1x0000000000000000000000000000000AA"

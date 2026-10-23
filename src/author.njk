@@ -1,0 +1,20 @@
+---
+layout: base.njk
+title: Alexandre Denault
+description: Alexandre Denault is VP of Production and Technology at Hyper Hippo, with over 20 years of experience building systems and teams in the games industry.
+permalink: /author/alexandre/
+---
+<section class="py-16">
+  <p class="text-xs font-semibold uppercase tracking-widest text-brand-700">Behind the articles</p>
+  <h1 class="mt-4 text-4xl font-semibold tracking-tight text-zinc-900">Alexandre Denault</h1>
+  <p class="mt-4 text-lg font-medium text-brand-700">VP of Production and Technology at Hyper Hippo</p>
+  <div class="mt-8 max-w-3xl space-y-5 text-lg leading-8 text-zinc-600">
+    <p>I lead Hyper Hippo’s production and central technology teams, shaping how new features get designed, built, and shipped—and the infrastructure that supports them. Over more than 20 years in technology and software development in the games industry, I’ve built and scaled the systems behind some of the world’s most-played mobile games.</p>
+    <p>My work has taken me from development and system administration to production and technology leadership. Along the way, I’ve focused on DevOps and LiveOps, Agile coaching, and online infrastructure, supporting projects with more than a decade in production and millions of daily users.</p>
+    <p>I care about turning ambitious ideas into reliable systems and helping teams do their best work. Strong engineering culture and thoughtful production practices give creative people a foundation they can depend on.</p>
+    <p>That curiosity started long before my career, when my dad brought home an 8086 computer. I’ve been dabbling with technology ever since. ADInfo is where I share what I’m learning about technology, people, and leadership; <a class="font-medium text-brand-700 underline underline-offset-4" href="https://www.technodabbler.com/">Technodabbler</a> is home to my hands-on explorations.</p>
+  </div>
+  <a class="contact-button mt-8" href="/contact/">Get in touch ↗</a>
+  <h2 class="mt-16 text-2xl font-semibold tracking-tight">Articles by Alexandre</h2>
+  <div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">{% for post in collections.posts %}{% include "card.njk" %}{% endfor %}</div>
+</section>
